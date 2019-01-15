@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ayt.mapper.user.UserMapper">
+  <resultMap id="BaseResultMap" type="com.ayt.model.User">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="cityid" jdbcType="INTEGER" property="cityid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ayt.model.User">
+    insert into tauser (id, user_name, description, 
+      cityid)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{cityid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ayt.model.User">
+    insert into tauser
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="cityid != null">
+        cityid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="cityid != null">
+        #{cityid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="findUserByCityId" resultMap="BaseResultMap">
+    select * from user where cityid=#{cityid}
+  </select>
+</mapper>
