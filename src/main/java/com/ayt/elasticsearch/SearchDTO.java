@@ -1,0 +1,29 @@
+package com.ayt.elasticsearch;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.elasticsearch.index.query.QueryBuilder;
+
+import javax.validation.constraints.NotNull;
+
+/**
+ * Description
+ * Author ayt  on
+ */
+@Data
+@Getter
+@Setter
+public class SearchDTO {
+    @NotNull(message = "索引不能为空")
+    private String index;
+    private String routing;
+    @NotNull(message = "类型不能为空")
+    private String type;
+    @NotNull
+    private QueryBuilder queryBuilder;
+    private  String[] includes;
+    private String[] excludes;
+    private int pagesize =1000;
+    private int currentPage = 0;
+}

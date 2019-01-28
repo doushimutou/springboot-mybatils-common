@@ -1,11 +1,13 @@
 package com.ayt.utils.lambdaUtil;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,6 +21,8 @@ import static java.util.Comparator.comparing;
  */
 @Test
 public class test {
+    private static final Logger logger = LoggerFactory.getLogger(test.class);
+
     public void test1(){
         String riderCode="20配送费、82准时送达奖励、85场景任务奖励、86新手跑单奖励、87人工派单奖励、" +
                 "92恶劣天气补贴、93时段奖励、94准时到店奖励、99困难单奖励、101优质订单加价、102大单补贴、" +
@@ -30,18 +34,19 @@ public class test {
         //取出类型值
         List<String> riderTradeMean=
         riderTradeList.stream().map(item->splitNotNumber(item)).collect(Collectors.toList());
-        System.out.println("mean值是"+JSON.toJSONString(riderTradeMean));
+//        System.out.println("mean值是"+JSON.toJSONString(riderTradeMean));
+        logger.info("mean值是"+JSON.toJSONString(riderTradeMean));
         //取出code
         List<String> riderTradeCode =
                 riderTradeList.stream().map(item ->getNumbers(item) ).collect(Collectors.toList());
-        System.out.println("code值是"+JSON.toJSONString(riderTradeCode));
+        logger.info("code值是"+JSON.toJSONString(riderTradeCode));
 
         List<RiderTradeDto> riderTradeDtos = riderTradeList.stream().map(item ->
                 new RiderTradeDto(getNumbers(item),splitNotNumber(item))).collect(Collectors.toList());
-        System.out.println("riderTradeDto是："+JSON.toJSONString(riderTradeDtos));
+        logger.info("riderTradeDto是："+JSON.toJSONString(riderTradeDtos));
         //排序结果是
         riderTradeDtos.sort(comparing(RiderTradeDto::getCode));
-        System.out.println("根据Code排序结果是："+JSON.toJSONString(riderTradeDtos));
+        logger.info("根据Code排序结果是："+JSON.toJSONString(riderTradeDtos));
 
     }
     // 截取非数字
@@ -110,4 +115,59 @@ public class test {
 
 
     }
+
+    public void testListNum(){
+        String  filters = "offlineRiderFilter,\n" +
+                "                riderWithImportantOrderFilter,\n" +
+                "                importantOrderRiderLevelFilter,\n" +
+                "                normalRiderLevelFilter,\n" +
+                "                contractOrderFilter,\n" +
+                "                riderTagFilter,\n" +
+                "                switchOrderFilter,\n" +
+                "                takeModeFilter,\n" +
+                "                orderCellingFilter,\n" +
+                "                replaceOrderExcludeSwitchRiderFilter,\n" +
+                "                riderUnAuditedFilter,\n" +
+                "                riderDepositGrabFilter,\n" +
+                "                riderRiskTagFilter,\n" +
+                "                byWayOrderDistanceFilter,\n" +
+                "                notFreeRiderFilter";
+        List<String> riderTradeList = Arrays.asList(filters.split(","));
+        System.out.println(riderTradeList.size());
+
+    }
+
+
+
+    public void test2(){
+        String string= "[\n" +
+                "    {\n" +
+                "      \"item_name\": \"米饭\",\n" +
+                "      \"quantity\": 1,\n" +
+                "      \"unit\": \"份\",\n" +
+                "      \"unit_price\": 250\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"item_name\": \"酸辣藕丁\",\n" +
+                "      \"quantity\": 1,\n" +
+                "      \"unit\": \"份\",\n" +
+                "      \"unit_price\": 800\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"item_name\": \"糖醋里脊\",\n" +
+                "      \"quantity\": 1,\n" +
+                "      \"unit\": \"份\",\n" +
+                "      \"unit_price\": 1400\n" +
+                "    }\n" +
+                "  ]";
+        JSON json= JSON.parseArray(string);
+        String string1= json.toString();
+        String string2= json.toString();
+        logger.info(string2);
+        logger.info(json.toJSONString());
+
+
+    }
+
+
 }

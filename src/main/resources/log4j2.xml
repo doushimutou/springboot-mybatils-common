@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" strict="true" shutdownHook="disable">
+    <Properties>
+        <Property name="project.name">ayt-demo</Property>
+        <Property name="local.logging.path">E:\springboot-mybatis-demo\src\log</Property>
+        <Property name="logging.file.path">${local.logging.path}/${project.name}</Property>
+        <Property name="action.file.path">${logging.file.path}</Property>
+        <Property name="logging.file.name">${sys:logging.file.path}/${project.name}.log</Property>
+        <Property name="logging.file.warn.name">${sys:logging.file.path}/${project.name}-warn.log</Property>
+        <Property name="logging.file.error.name">${sys:logging.file.path}/${project.name}-error.log</Property>
+        <Property name="logging.file.action.name">${sys:logging.file.path}/../bigdata/${project.name}-action.log</Property>
+        <Property name="logging.file.bury.name">${sys:logging.file.path}/../bigdata/bury-${project.name}.log</Property>
+        <Property name="logging.file.monitor.name">${sys:logging.file.path}/../monitor/${project.name}-monitor.log</Property>
+        <Property name="layout">%d %p %X{unique} [%t] %c{10}:%M:%L %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!--这个输出控制台的配置-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!--这个都知道是输出日志的格式-->
+            <PatternLayout pattern="${layout}"/>
+        </Console>
+        <!-- 这个会打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
+        <!--　RollingFile节点用来定义超过指定大小自动删除旧的创建新的的Appender.-->
+
+        <!--　name:指定Appender的名字.-->
+
+        <!--　fileName:指定输出日志的目的文件带全路径的文件名.-->
+
+        <!--　PatternLayout:输出格式，不设置默认为:%m%n.-->
+
+        <!--　filePattern:指定新建日志文件的名称格式.-->
+
+        <!--　Policies:指定滚动日志的策略，就是什么时候进行新建日志文件输出日志.-->
+
+        <!--　TimeBasedTriggeringPolicy:Policies子节点，基于时间的滚动策略，interval属性用来指定多久滚动一次，
+        默认是1 hour。modulate=true用来调整时间：比如现在是早上3am，interval是4，那么第一次滚动是在4am，接着是8am，12am...而不是7am.-->
+
+        <!--SizeBasedTriggeringPolicy:Policies子节点，基于指定文件大小的滚动策略，size属性用来定义每个日志文件的大小.-->
+
+        <!--DefaultRolloverStrategy:用来指定同一个文件夹下最多有几个日志文件时开始删除最旧的，创建新的(通过max属性)-->
+        <RollingFile name="RollingFile" fileName="logs/app.log"
+                     filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="50MB"/>
+            <!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了20 -->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <!--RollingRandomAccessFile基本属性-->
+        <!--name：Appender名称-->
+        <!--immediateFlush：log4j2接收到日志事件时，是否立即将日志刷到磁盘。默认为true。-->
+        <!--fileName：日志存储路径-->
+        <!--filePattern：历史日志封存路径。其中%d{yyyyMMddHH}表示了封存历史日志的时间单位
+        （目前单位为小时，yyyy表示年，MM表示月，dd表示天，HH表示小时，mm表示分钟，ss表示秒，SS表示毫秒）。
+        注意后缀，log4j2自动识别zip等后缀，表示历史日志需要压缩。-->
+        <RollingRandomAccessFile name="RollingRandomAccessFile"
+                immediateFlush ="true"  fileName="E:\springboot-mybatis-demo\src\log\apps.log"
+                filePattern="${logging.file.action.name}.%d{yyyy-MM-dd}">
+            <PatternLayout pattern="${layout}" />
+            <ThresholdFilter level="debug" />
+            <!--TimeBasedTriggeringPolicy-->
+            <!--interval：表示历史日志封存间隔时间，单位为filePattern设置的单位值-->
+            <!--modulate：表示是否历史日志生成时间纠偏，纠偏以零点为基准进行。-->
+            <!--比如：15:16生成了msg.2017041715.zip文件，那么纠偏后会在16:00生成msg.2017041716.zip-->
+            <TimeBasedTriggeringPolicy />
+
+        </RollingRandomAccessFile>
+
+
+    </Appenders>
+    <!--然后定义logger，只有定义了logger并引入的appender，appender才会生效-->
+    <loggers>
+        <Logger name="com.ayt" level="debug" />
+        <!--建立一个默认的root的logger,节点用来指定项目的根日志，如果没有单独指定Logger，那么就会默认使用该Root日志输出-->
+        <root level="error">
+            <!--，用来指定该日志输出到哪个Appender,如果没有指定，就会默认继承自Root.如果指定了，
+            那么会在指定的这个Appender和Root的Appender中都会输出，此时我们可以设置Logger的additivity="false"只在自定义的Appender中进行输出。-->
+            <appender-ref ref="RollingRandomAccessFile"/>
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+
+
+
+
+
+	<!-- ========================== 自定义输出格式说明================================ -->
+	<!-- %p 输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL -->
+	<!-- %r 输出自应用启动到输出该log信息耗费的毫秒数  -->
+	<!-- %c 输出所属的类目，通常就是所在类的全名 -->
+	<!-- %t 输出产生该日志事件的线程名 -->
+	<!-- %n 输出一个回车换行符，Windows平台为“/r/n”，Unix平台为“/n” -->
+	<!-- %d 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyy MMM dd HH:mm:ss,SSS}，输出类似：2002年10月18日 22：10：28，921  -->
+	<!-- %l 输出日志事件的发生位置，包括类目名、发生的线程，以及在代码中的行数。举例：Testlo4.main(TestLog4.java:10)  -->
+	<!-- ========================================================================== -->
+
+
+
+</Configuration>
