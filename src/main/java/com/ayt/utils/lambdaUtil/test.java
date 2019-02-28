@@ -1,8 +1,6 @@
 package com.ayt.utils.lambdaUtil;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -136,7 +134,18 @@ public class test {
         System.out.println(riderTradeList.size());
 
     }
+public  void test22(){
+        String name ="实时抢单单量，实时派单单量，实时新增总单量，" +
+                "每秒派单数，实时未派出订单数，平均每轮找人次数，" +
+                "非空闲骑手平均新增距离，空闲骑手选中比例，派单骑手平均并单数量，" +
+                "派单骑手平均整体顺路度，区域外派单比例，离店派单比例，同店同址比例，平均命中骑手数，" +
+                "实时触发兜底强推荐的数量，实时未派出驻店订单的数量，实时未派出半定向订单的数量，兜底强推荐的接单量，" +
+                "饿了么降级单比例，困难单单量占比，命中0人轮数比例，派单成功订单平均派单次数";
+        List<String> namelist = Arrays.asList(name.split("，"));
+    System.out.println(JSON.toJSONString(namelist));
 
+
+}
 
 
     public void test2(){
@@ -168,6 +177,7 @@ public class test {
 
 
     }
+
 
 
 }
