@@ -26,16 +26,16 @@ import javax.sql.DataSource;
 @MapperScan(basePackages =MytestDataSourceConfig.PACKAGE,sqlSessionFactoryRef = "mytestSqlSessionFactory")
 public class MytestDataSourceConfig {
 
-    static final String PACKAGE="com.ayt.mapper.user";
-    static final String MAPPER_LOCATION="classpath:/mapping/user/*.xml";
+    static final String PACKAGE="com.ayt.mapper";
+    static final String MAPPER_LOCATION="classpath:/mapping/*.xml";
     //@Value 获取全局配置文件 application.properties 的 kv 配置,并自动装配
-    @Value("${mybatis.datasource.url}")
+    @Value("${mytest.datasource.url}")
     private String url;
-    @Value("${mybatis.datasource.username}")
+    @Value("${mytest.datasource.username}")
     private String user;
-    @Value("${mybatis.datasource.password}")
+    @Value("${mytest.datasource.password}")
     private String password;
-    @Value("${mybatis.datasource.driverClassName}")
+    @Value("${mytest.datasource.driverClassName}")
     private String driverClass;
 
 

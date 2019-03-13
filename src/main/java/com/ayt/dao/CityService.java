@@ -1,4 +1,4 @@
-package com.ayt.service;/**
+package com.ayt.dao;/**
  * @Title: ${file_name}
  * @Package ${package_name}
  * @Description: ${todo}

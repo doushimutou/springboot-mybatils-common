@@ -6,32 +6,53 @@ package com.ayt.serviceImp;/**
  * @date 2018/8/522:49
  */
 
-import com.ayt.mapper.city.CityMapper;
-import com.ayt.mapper.user.UserMapper;
-import com.ayt.model.City;
+
+import com.ayt.mapper.UserMapper;
 import com.ayt.model.User;
-import com.ayt.service.UserService;
+import com.ayt.dao.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 /**
  * @author ayt  on 20180805
  */
-@Service
+@Component
 public class UserServicesImp implements UserService{
-    @Autowired(required = false)
-    CityMapper cityMapper;
-    @Autowired
+
+    @Resource
     UserMapper userMapper;
 
-    @Override
-    public User findUserByCityId(int cityid) {
-        User user=userMapper.findUserByCityId(cityid);
-        System.out.println("111111111");
-        City city=cityMapper.findById("1");
-        user.setCity(city);
-        System.out.println(user);
-        return user;
+//    @Override
+//    public int insert(User record) {
+//       return userMapper.insert(record);
+//    }
 
+    @Override
+    @Transactional
+    @CachePut(value = "record" ,key="'redis_user_' + #result.id" )
+    public User insert(User record) {
+        try {
+             userMapper.insert(record);
+             return record;
+        }catch (Exception e){
+            throw e;
+        }
     }
+
+
+    @Override
+    public int insertSelective(User record) {
+        return 0;
+    }
+
+//    @Override
+//    public User findUserByCityId(int cityid) {
+//        User user=userMapper.findUserByCityId(cityid);
+//        return user;
+//    }
 }

@@ -47,7 +47,7 @@
         <!--delimitIdentifiers="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true">-->
         <!--<generatedKey column="id" sqlStatement="MYSQL" identity="true" type="post"/>-->
         <!--</table>-->
-        <table tableName="tauser" domainObjectName="User" enableCountByExample="false"
+        <table tableName="city" domainObjectName="City" enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"
                >

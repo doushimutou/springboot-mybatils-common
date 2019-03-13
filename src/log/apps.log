@@ -1,96 +1,17 @@
-2019-02-15 11:35:27,831 INFO  [restartedMain] com.dianwoba.cherry.Application:logStarting:50 Starting Application on dwb-571-00268 with PID 16484 (E:\dwd-test\DWD-Test-Cherry\target\classes started by Administrator in E:\dwd-test\DWD-Test-Cherry)
-2019-02-15 11:35:27,883 DEBUG  [restartedMain] com.dianwoba.cherry.Application:logStarting:53 Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
-2019-02-15 11:35:27,884 INFO  [restartedMain] com.dianwoba.cherry.Application:logStartupProfileInfo:659 No active profile set, falling back to default profiles: default
-2019-02-15 11:35:31,004 ERROR  [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:report:42 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-A component required a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' in your configuration.
-
-2019-02-15 11:54:26,411 INFO  [restartedMain] com.dianwoba.cherry.Application:logStarting:50 Starting Application on dwb-571-00268 with PID 23176 (E:\dwd-test\DWD-Test-Cherry\target\classes started by Administrator in E:\dwd-test\DWD-Test-Cherry)
-2019-02-15 11:54:26,421 DEBUG  [restartedMain] com.dianwoba.cherry.Application:logStarting:53 Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
-2019-02-15 11:54:26,422 INFO  [restartedMain] com.dianwoba.cherry.Application:logStartupProfileInfo:659 No active profile set, falling back to default profiles: default
-2019-02-15 11:54:30,057 ERROR  [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:report:42 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-A component required a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' in your configuration.
-
-2019-02-15 14:12:05,914 INFO  [restartedMain] com.dianwoba.cherry.Application:logStarting:50 Starting Application on dwb-571-00268 with PID 19032 (E:\dwd-test\DWD-Test-Cherry\target\classes started by Administrator in E:\dwd-test\DWD-Test-Cherry)
-2019-02-15 14:12:05,933 DEBUG  [restartedMain] com.dianwoba.cherry.Application:logStarting:53 Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
-2019-02-15 14:12:05,934 INFO  [restartedMain] com.dianwoba.cherry.Application:logStartupProfileInfo:659 No active profile set, falling back to default profiles: default
-2019-02-15 14:12:08,628 ERROR  [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:report:42 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-A component required a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' in your configuration.
-
-2019-02-15 14:16:49,537 INFO  [restartedMain] com.dianwoba.cherry.Application:logStarting:50 Starting Application on dwb-571-00268 with PID 6588 (E:\dwd-test\DWD-Test-Cherry\target\classes started by Administrator in E:\dwd-test\DWD-Test-Cherry)
-2019-02-15 14:16:49,546 DEBUG  [restartedMain] com.dianwoba.cherry.Application:logStarting:53 Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
-2019-02-15 14:16:49,546 INFO  [restartedMain] com.dianwoba.cherry.Application:logStartupProfileInfo:659 No active profile set, falling back to default profiles: default
-2019-02-15 14:16:52,199 ERROR  [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:report:42 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-A component required a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' in your configuration.
-
-2019-02-15 14:28:47,953 INFO  [main] com.ayt.utils.lambdaUtil.test:test1:38 mean值是["配送费","准时送达奖励","场景任务奖励","新手跑单奖励","人工派单奖励","恶劣天气补贴","时段奖励","准时到店奖励","困难单奖励","优质订单加价","大单补贴","其他临时调价","随机红包奖励","配送费动态调价","人工派单奖励","配送难度补贴","充值","押金返还","垫付返还","小费","余额支付退款","保证金转入","揽件补贴","揽件佣金","电子面单寄件费扣除","排行榜奖励","提现失败返还","虚拟货币兑换余额","押金扣除","余额支付","转出至保证金","菜鸟技术服务费"]
-2019-02-15 14:28:47,964 INFO  [main] com.ayt.utils.lambdaUtil.test:test1:42 code值是["20","82","85","86","87","92","93","94","99","101","102","76","79","72","26","27","9","49","89","90","97","103","107","108","109","43","13","17","48","96","104","105"]
-2019-02-15 14:28:47,973 INFO  [main] com.ayt.utils.lambdaUtil.test:test1:46 riderTradeDto是：[{"code":"20","mean":"配送费"},{"code":"82","mean":"准时送达奖励"},{"code":"85","mean":"场景任务奖励"},{"code":"86","mean":"新手跑单奖励"},{"code":"87","mean":"人工派单奖励"},{"code":"92","mean":"恶劣天气补贴"},{"code":"93","mean":"时段奖励"},{"code":"94","mean":"准时到店奖励"},{"code":"99","mean":"困难单奖励"},{"code":"101","mean":"优质订单加价"},{"code":"102","mean":"大单补贴"},{"code":"76","mean":"其他临时调价"},{"code":"79","mean":"随机红包奖励"},{"code":"72","mean":"配送费动态调价"},{"code":"26","mean":"人工派单奖励"},{"code":"27","mean":"配送难度补贴"},{"code":"9","mean":"充值"},{"code":"49","mean":"押金返还"},{"code":"89","mean":"垫付返还"},{"code":"90","mean":"小费"},{"code":"97","mean":"余额支付退款"},{"code":"103","mean":"保证金转入"},{"code":"107","mean":"揽件补贴"},{"code":"108","mean":"揽件佣金"},{"code":"109","mean":"电子面单寄件费扣除"},{"code":"43","mean":"排行榜奖励"},{"code":"13","mean":"提现失败返还"},{"code":"17","mean":"虚拟货币兑换余额"},{"code":"48","mean":"押金扣除"},{"code":"96","mean":"余额支付"},{"code":"104","mean":"转出至保证金"},{"code":"105","mean":"菜鸟技术服务费"}]
-2019-02-15 14:28:47,974 INFO  [main] com.ayt.utils.lambdaUtil.test:test1:49 根据Code排序结果是：[{"code":"101","mean":"优质订单加价"},{"code":"102","mean":"大单补贴"},{"code":"103","mean":"保证金转入"},{"code":"104","mean":"转出至保证金"},{"code":"105","mean":"菜鸟技术服务费"},{"code":"107","mean":"揽件补贴"},{"code":"108","mean":"揽件佣金"},{"code":"109","mean":"电子面单寄件费扣除"},{"code":"13","mean":"提现失败返还"},{"code":"17","mean":"虚拟货币兑换余额"},{"code":"20","mean":"配送费"},{"code":"26","mean":"人工派单奖励"},{"code":"27","mean":"配送难度补贴"},{"code":"43","mean":"排行榜奖励"},{"code":"48","mean":"押金扣除"},{"code":"49","mean":"押金返还"},{"code":"72","mean":"配送费动态调价"},{"code":"76","mean":"其他临时调价"},{"code":"79","mean":"随机红包奖励"},{"code":"82","mean":"准时送达奖励"},{"code":"85","mean":"场景任务奖励"},{"code":"86","mean":"新手跑单奖励"},{"code":"87","mean":"人工派单奖励"},{"code":"89","mean":"垫付返还"},{"code":"9","mean":"充值"},{"code":"90","mean":"小费"},{"code":"92","mean":"恶劣天气补贴"},{"code":"93","mean":"时段奖励"},{"code":"94","mean":"准时到店奖励"},{"code":"96","mean":"余额支付"},{"code":"97","mean":"余额支付退款"},{"code":"99","mean":"困难单奖励"}]
-2019-02-15 14:28:47,996 INFO  [main] com.ayt.utils.lambdaUtil.test:test2:166 [{"unit":"份","quantity":1,"item_name":"米饭","unit_price":250},{"unit":"份","quantity":1,"item_name":"酸辣藕丁","unit_price":800},{"unit":"份","quantity":1,"item_name":"糖醋里脊","unit_price":1400}]
-2019-02-15 14:28:47,997 INFO  [main] com.ayt.utils.lambdaUtil.test:test2:167 [{"unit":"份","quantity":1,"item_name":"米饭","unit_price":250},{"unit":"份","quantity":1,"item_name":"酸辣藕丁","unit_price":800},{"unit":"份","quantity":1,"item_name":"糖醋里脊","unit_price":1400}]
-2019-02-15 14:30:10,329 INFO  [restartedMain] com.dianwoba.cherry.Application:logStarting:50 Starting Application on dwb-571-00268 with PID 13108 (E:\dwd-test\DWD-Test-Cherry\target\classes started by Administrator in E:\dwd-test\DWD-Test-Cherry)
-2019-02-15 14:30:10,337 DEBUG  [restartedMain] com.dianwoba.cherry.Application:logStarting:53 Running with Spring Boot v2.0.1.RELEASE, Spring v5.0.5.RELEASE
-2019-02-15 14:30:10,338 INFO  [restartedMain] com.dianwoba.cherry.Application:logStartupProfileInfo:659 No active profile set, falling back to default profiles: default
-2019-02-15 14:30:13,205 ERROR  [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:report:42 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-A component required a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'com.dianwoba.order.dispatch.provider.DispatchQueryOrderProvider' in your configuration.
-
+2019-03-13 10:25:19,133 INFO  [main] com.ayt.EsTest:logStarting:48 Starting EsTest on dwb-571-00268 with PID 10476 (started by Administrator in E:\springboot-mybatis-demo)
+2019-03-13 10:25:19,155 DEBUG  [main] com.ayt.EsTest:logStarting:51 Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2019-03-13 10:25:19,155 INFO  [main] com.ayt.EsTest:logStartupProfileInfo:593 No active profile set, falling back to default profiles: default
+2019-03-13 10:25:28,104 INFO  [main] com.ayt.EsTest:logStarted:57 Started EsTest in 9.376 seconds (JVM running for 12.259)
+2019-03-13 10:52:35,625 INFO  [main] com.ayt.EsTest:logStarting:48 Starting EsTest on dwb-571-00268 with PID 20404 (started by Administrator in E:\springboot-mybatis-demo)
+2019-03-13 10:52:35,636 DEBUG  [main] com.ayt.EsTest:logStarting:51 Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2019-03-13 10:52:35,639 INFO  [main] com.ayt.EsTest:logStartupProfileInfo:593 No active profile set, falling back to default profiles: default
+2019-03-13 10:52:44,147 INFO  [main] com.ayt.EsTest:logStarted:57 Started EsTest in 9.212 seconds (JVM running for 12.061)
+2019-03-13 10:54:12,296 INFO  [main] com.ayt.EsTest:logStarting:48 Starting EsTest on dwb-571-00268 with PID 16332 (started by Administrator in E:\springboot-mybatis-demo)
+2019-03-13 10:54:12,305 DEBUG  [main] com.ayt.EsTest:logStarting:51 Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2019-03-13 10:54:12,309 INFO  [main] com.ayt.EsTest:logStartupProfileInfo:593 No active profile set, falling back to default profiles: default
+2019-03-13 10:54:23,951 INFO  [main] com.ayt.EsTest:logStarted:57 Started EsTest in 12.182 seconds (JVM running for 14.819)
+2019-03-13 11:17:54,818 INFO  [main] com.ayt.EsTest:logStarting:48 Starting EsTest on dwb-571-00268 with PID 16752 (started by Administrator in E:\springboot-mybatis-demo)
+2019-03-13 11:17:54,828 DEBUG  [main] com.ayt.EsTest:logStarting:51 Running with Spring Boot v1.5.6.RELEASE, Spring v4.3.10.RELEASE
+2019-03-13 11:17:54,828 INFO  [main] com.ayt.EsTest:logStartupProfileInfo:593 No active profile set, falling back to default profiles: default
+2019-03-13 11:18:12,149 INFO  [main] com.ayt.EsTest:logStarted:57 Started EsTest in 17.838 seconds (JVM running for 22.269)
+2019-03-13 11:18:17,213 INFO  [main] com.ayt.utils.lambdaUtil.test:testEs:33 {"fragment":false,"id":"mo0OdWkBu-pJFErsyM__","index":"city","primaryTerm":1,"result":"CREATED","seqNo":0,"shardId":{"fragment":true,"id":0,"index":{"fragment":false,"name":"city","uUID":"mg9eK4hPTnyEOwpZ0Wx7BA"},"indexName":"city"},"shardInfo":{"failed":0,"failures":[],"fragment":false,"successful":1,"total":2},"type":"demoDTO","version":1}

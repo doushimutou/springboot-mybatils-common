@@ -1,4 +1,4 @@
-package com.ayt.service;/**
+package com.ayt.dao;/**
  * @Title: ${file_name}
  * @Package ${package_name}
  * @Description: ${todo}
@@ -13,8 +13,9 @@ import com.ayt.model.User;
  */
 public interface UserService {
 
-
-    User findUserByCityId(int cityid);
+    User insert(User record);
+    int insertSelective(User record);
+//    User findUserByCityId(int cityid);
 
 
 

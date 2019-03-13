@@ -3,12 +3,11 @@ package com.ayt.model;
 public class User {
     private Integer id;
 
+    private Integer cityid;
+
     private String userName;
 
     private String description;
-
-    private Integer cityid;
-    private City city;
 
     public Integer getId() {
         return id;
@@ -16,6 +15,14 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getCityid() {
+        return cityid;
+    }
+
+    public void setCityid(Integer cityid) {
+        this.cityid = cityid;
     }
 
     public String getUserName() {
@@ -32,20 +39,5 @@ public class User {
 
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
-    }
-
-    public Integer getCityid() {
-        return cityid;
-    }
-
-    public void setCityid(Integer cityid) {
-        this.cityid = cityid;
-    }
-
-    public City getCity(){
-        return city;
-    }
-    public void setCity(City city) {
-        this.city = city;
     }
 }

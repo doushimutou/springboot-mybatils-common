@@ -6,11 +6,12 @@ package com.ayt.Controller;/**
  * @date 2018/8/521:37
  */
 
-import com.ayt.mapper.city.CityMapper;
-import com.ayt.mapper.user.UserMapper;
+
+import com.ayt.mapper.CityMapper;
+import com.ayt.mapper.UserMapper;
 import com.ayt.model.City;
 import com.ayt.model.User;
-import com.ayt.service.UserService;
+import com.ayt.dao.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,14 +37,16 @@ public class CityController {
      */
     @RequestMapping(value = "/api/city", method = RequestMethod.GET)
     public User findById(@RequestParam(value = "cityid", required = true) int cityid) {
-        return userService.findUserByCityId(cityid);
+//        return userService.findUserByCityId(cityid);
+        return null;
     }
 
 
     @RequestMapping(value = "/api/city12", method = RequestMethod.GET)
     public User findById12(@RequestParam(value = "cityid", required = true) int cityid) {
 
-        return userService.findUserByCityId(cityid);
+//        return userService.findUserByCityId(cityid);
+        return null;
     }
 
     /**
